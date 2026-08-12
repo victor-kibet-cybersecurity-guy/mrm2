@@ -1,0 +1,1 @@
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}@keyframes pulse{50%{transform:scale(1.05)}}.float-btn:hover{animation:pulse .7s ease}.btn{position:relative;overflow:hidden}.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.4);transform:scale(0);animation:ripple .6s linear}@keyframes ripple{to{transform:scale(4);opacity:0}}
