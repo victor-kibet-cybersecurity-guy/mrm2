@@ -1,17 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const galleryGrid = document.querySelector('#gallery-grid');
+  const galleryGrid = document.querySelector('#gallery-grid, #gallery');
   const filterWrap = document.querySelector('#gallery-filter-wrap');
   const modal = document.querySelector('#gallery-modal');
   const modalImg = document.querySelector('#gallery-modal-img');
   const modalCaption = document.querySelector('#gallery-modal-caption');
 
   const galleryItems = [
-    { id: 1, title: "Modern Residential Villa in Nakuru", category: "Residential Roofs", profile: "Versatile", color: "Charcoal", img: "images/hero-roof.svg" },
-    { id: 2, title: "Executive Maisonette in Kiambu", category: "Residential Roofs", profile: "Orientile", color: "Maroon", img: "images/gallery-1.svg" },
-    { id: 3, title: "Commercial Complex Roof in Eldoret", category: "Commercial Roofs", profile: "Box Profile", color: "Charcoal", img: "images/covermax-28g-charcoal.svg" },
-    { id: 4, title: "Residential Bungalow in Athi River", category: "Residential Roofs", profile: "Versatile", color: "Tile Red", img: "images/gallery-1.svg" },
-    { id: 5, title: "Warehouse Facility in Mariakani", category: "Commercial Roofs", profile: "Corrugated", color: "Green", img: "images/corrugated-30g-galvanized.svg" },
-    { id: 6, title: "Contemporary Residence in Nyeri", category: "Residential Roofs", profile: "Orientile", color: "Charcoal", img: "images/hero-roof.svg" }
+    { id: 1, title: "Modern Residential Villa in Nakuru", category: "Residential Roofs", profile: "Versatile", color: "Charcoal", img: "images/project-01.webp" },
+    { id: 2, title: "Executive Maisonette in Kiambu", category: "Residential Roofs", profile: "Orientile", color: "Maroon", img: "images/project-02.webp" },
+    { id: 3, title: "Commercial Complex Roof in Eldoret", category: "Commercial Roofs", profile: "Box Profile", color: "Charcoal", img: "images/project-03.webp" },
+    { id: 4, title: "Residential Bungalow in Athi River", category: "Residential Roofs", profile: "Versatile", color: "Tile Red", img: "images/project-04.webp" },
+    { id: 5, title: "Warehouse Facility in Mariakani", category: "Commercial Roofs", profile: "Corrugated", color: "Green", img: "images/project-05.webp" },
+    { id: 6, title: "Contemporary Residence in Nyeri", category: "Residential Roofs", profile: "Orientile", color: "Charcoal", img: "images/project-06.webp" },
+    { id: 7, title: "Family Home Roof in Nairobi", category: "Residential Roofs", profile: "Roman Tile", color: "Tile Red", img: "images/project-07.webp" },
+    { id: 8, title: "Retail Building Roof in Kisumu", category: "Commercial Roofs", profile: "Box Profile", color: "Green", img: "images/project-08.webp" },
+    { id: 9, title: "Country Home Roof in Meru", category: "Residential Roofs", profile: "Versatile", color: "Charcoal", img: "images/project-09.webp" },
+    { id: 10, title: "Institutional Roof in Machakos", category: "Commercial Roofs", profile: "Corrugated", color: "Maroon", img: "images/project-10.webp" },
+    { id: 11, title: "Modern Bungalow in Kitengela", category: "Residential Roofs", profile: "Roman Tile", color: "Charcoal", img: "images/project-11.webp" },
+    { id: 12, title: "Large Roofing Project in Mombasa", category: "Commercial Roofs", profile: "Box Profile", color: "Tile Red", img: "images/project-12.webp" }
   ];
 
   function renderGallery(filter = 'All') {
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     galleryGrid.innerHTML = filtered.map(item => `
       <div class="gallery-card reveal" data-img="${item.img}" data-title="${esc(item.title)}">
-        <img src="${item.img}" alt="${esc(item.title)} project preview" loading="lazy">
+        <img src="${item.img}" srcset="${item.img.replace('.webp','-mobile.webp')} 640w, ${item.img} 1200w" sizes="(max-width:767px) 100vw, 33vw" alt="${esc(item.title)} project preview" loading="lazy" decoding="async">
         <div class="caption">
           <strong>${esc(item.title)}</strong>
           <div class="meta" style="margin-top:4px;">

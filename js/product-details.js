@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   root.innerHTML = `
     <div>
       <div class="detail-main-img">
-        <img src="images/${p.id}.svg" onerror="this.onerror=null;this.src='${getProductSvg(p)}'" alt="${esc(p.name)} roofing sheet specification preview">
+        <img src="${getProductImage(p)}" srcset="${getProductImage(p, true)} 640w, ${getProductImage(p)} 1200w" sizes="(max-width:767px) 100vw, 50vw" onerror="this.onerror=null;this.src='${getProductSvg(p)}'" alt="${esc(p.name)} roofing sheet specification preview">
       </div>
       <div class="small" style="margin-top:10px;">High quality coated steel MRM profile preview.</div>
     </div>

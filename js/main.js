@@ -7,6 +7,19 @@ const esc = s => String(s ?? '').replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': 
 
 const wa = msg => `https://wa.me/${INTL}?text=${encodeURIComponent(msg)}`;
 
+const PRODUCT_IMAGE_MAP = {
+  'ordinary-30g-glossy': 'dumuzaz-30g', 'ordinary-28g-glossy': 'dumuzaz-28g',
+  'roman-tiles-30g-glossy': 'roman-tile-30g-glossy', 'roman-tiles-28g-glossy': 'roman-tile-28g-glossy',
+  'roman-tiles-28g-matte': 'roman-tile-28g-matte', 'roman-tiles-30g-matte': 'roman-tile-30g-glossy',
+  'pvc-downpipe': 'rainwater-downpipe', 'roofing-nails-1kg': 'roofing-nails',
+  'roof-sealant-300ml': 'roof-sealant', 'polycarbonate-clear-6mm': 'roofing-placeholder',
+  'transparent-corrugated': 'roofing-placeholder', 'foil-insulation-10m': 'roofing-placeholder'
+};
+function getProductImage(p, mobile = false) {
+  const base = PRODUCT_IMAGE_MAP[p.id] || p.id;
+  return `images/${base}${mobile ? '-mobile' : ''}.webp`;
+}
+
 // SVG Data URI fallback generator for product cards if SVG file missing
 function getProductSvg(p) {
   const colorMap = {
@@ -43,7 +56,7 @@ function productCard(p) {
   return `<article class="card product-card reveal">
     <button class="fav" data-wish="${p.id}" aria-label="Add ${esc(p.name)} to wishlist">♡</button>
     <div class="product-card-img-wrap">
-      <img loading="lazy" src="images/${p.id}.svg" onerror="this.onerror=null;this.src='${getProductSvg(p)}'" alt="${esc(p.name)} MRM roofing sheet preview">
+      <img loading="lazy" decoding="async" src="${getProductImage(p)}" srcset="${getProductImage(p, true)} 640w, ${getProductImage(p)} 1200w" sizes="(max-width:767px) 100vw, 25vw" onerror="this.onerror=null;this.src='${getProductSvg(p)}'" alt="${esc(p.name)} MRM roofing sheet preview">
     </div>
     <div class="card-pad">
       <span class="tag">${esc(p.category)}</span>
