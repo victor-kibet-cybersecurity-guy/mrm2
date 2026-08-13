@@ -302,8 +302,9 @@
   .footer{padding-bottom:120px}
   .footer-links-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .brand-subtitle{max-width:210px}
-  .floating{position:fixed;right:16px;bottom:calc(68px + max(8px,env(safe-area-inset-bottom,0px)));z-index:190;gap:8px}
-  .floating .float-btn.whatsapp, .floating .float-btn.call{display:none} /* Mobile bottom bar provides direct Call/WA */
+  .floating{position:fixed;right:16px;bottom:calc(76px + max(8px,env(safe-area-inset-bottom,0px)));z-index:220;gap:8px}
+  .floating .float-btn.whatsapp{display:grid;width:56px;height:56px;box-shadow:0 10px 28px rgba(18,140,61,.38)}
+  .floating .float-btn.call{display:none} /* Call remains available in the mobile bottom bar. */
   .floating .float-btn.totop{display:grid}
   .mobile-bottom{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;z-index:180;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(0,0,0,.08);padding:7px 6px max(7px,env(safe-area-inset-bottom));gap:4px}
   .mobile-bottom a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:10px;padding:7px 2px;font-weight:800;font-size:.68rem;line-height:1.1;text-align:center;min-width:0}
