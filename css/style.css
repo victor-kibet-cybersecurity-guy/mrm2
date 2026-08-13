@@ -129,7 +129,7 @@ button,input,select,textarea{font:inherit}
 .dealer-note{font-size:.84rem!important;color:#cbd5e1!important;margin-top:8px}
 
 /* Trust Strip */
-.trust-strip{background:#f1f5f9;border-y:1px solid var(--line);padding:18px 0}
+.trust-strip{background:#f1f5f9;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}
 .trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;text-align:center}
 .trust-box{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:.88rem;color:var(--navy);padding:8px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.02)}
 
@@ -620,7 +620,7 @@ section{content-visibility:auto;contain-intrinsic-size:1px 650px}.hero,.page-her
 .u-24d94733d{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
 .u-2865149ff{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
 .u-2a7713144{background:#fff}
-.u-3865ac414{display:flex; justify-style:space-between; align-items:center; margin-bottom:12px}
+.u-3865ac414{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
 .u-3ad88d9d0{color:#f59e0b; font-size:1.1rem; letter-spacing:2px}
 .u-4811199dc{border-radius:8px; width:100%; height:200px; object-fit:cover}
 .u-49fcd855c{margin-top:24px}
