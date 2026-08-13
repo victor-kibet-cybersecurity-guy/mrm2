@@ -110,16 +110,6 @@ function updateDynamicPageMeta(options = {}) {
   }
   if (window.SEOManager && typeof window.SEOManager.update === 'function') {
     window.SEOManager.update();
-  } else if (!document.querySelector('script[src*="seo_manager.js"]')) {
-    const s = document.createElement('script');
-    s.src = 'js/seo_manager.js';
-    s.defer = true;
-    s.onload = () => {
-      if (window.SEOManager && typeof window.SEOManager.update === 'function') {
-        window.SEOManager.update();
-      }
-    };
-    document.head.appendChild(s);
   }
 }
 
