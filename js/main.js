@@ -357,24 +357,7 @@ function setupSocialLinks() {
     </div>
   `;
 
-  // 1. Topbar social links
-  const topbarContainers = document.querySelectorAll('.topbar .container');
-  topbarContainers.forEach(container => {
-    if (!container.querySelector('.social-links')) {
-      const phoneLink = container.querySelector('a[href^="tel:"]');
-      const wrapper = document.createElement('div');
-      wrapper.className = 'topbar-contacts';
-      wrapper.innerHTML = socialIconsHTML;
-      if (phoneLink) {
-        container.insertBefore(wrapper, phoneLink);
-        wrapper.appendChild(phoneLink);
-      } else {
-        container.appendChild(wrapper);
-      }
-    }
-  });
-
-  // 2. Footer social links
+  // Social links are intentionally limited to the footer.
   const footerGrids = document.querySelectorAll('.footer-grid');
   footerGrids.forEach(grid => {
     const firstCol = grid.firstElementChild;
