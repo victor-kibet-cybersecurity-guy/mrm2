@@ -305,7 +305,7 @@ function applyTheme(theme) {
   });
 }
 
-function initTheme() {
+function legacyInitTheme() {
   let saved = null;
   try {
     saved = localStorage.getItem('mrm_theme');
@@ -316,9 +316,9 @@ function initTheme() {
 }
 
 // Initialize theme state immediately to prevent layout / color flash
-initTheme();
+// Theme initialization is handled by the fixed-palette policy below.
 
-function setupThemeToggleUI() {
+function legacySetupThemeToggleUI() {
   const navActions = document.querySelectorAll('.nav-actions');
   navActions.forEach(actions => {
     if (!actions.querySelector('.theme-toggle')) {
@@ -338,6 +338,19 @@ function setupThemeToggleUI() {
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   applyTheme(isDark ? 'dark' : 'light');
+}
+
+// Final theme policy: keep one consistent palette on every device and remove
+// the obsolete dark/light control, including preferences saved by older builds.
+function initTheme() {
+  document.documentElement.removeAttribute('data-theme');
+  document.documentElement.style.colorScheme = 'light';
+  try { localStorage.removeItem('mrm_theme'); } catch (e) {}
+  document.querySelectorAll('.theme-toggle').forEach(btn => btn.remove());
+}
+
+function setupThemeToggleUI() {
+  initTheme();
 }
 
 function setupSocialLinks() {
