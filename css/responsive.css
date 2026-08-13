@@ -259,7 +259,7 @@
   .topbar .container{font-size:.78rem;flex-direction:column;gap:4px;text-align:center}
   .nav{min-height:64px}
   .brand{font-size:.9rem}
-  .hero{min-height:500px}
+  .hero{min-height:560px;background-position:62% center}
   .hero-content{padding:48px 0}
   .hero-buttons{flex-direction:column}
   .hero-buttons .btn{width:100%}
@@ -267,16 +267,25 @@
   .grid-4,.grid-3,.grid-2,.calc-layout,.visualizer,.filters,.footer-grid{grid-template-columns:1fr}
   .section{padding:48px 0}
   .section-head{align-items:flex-start;flex-direction:column}
-  .footer{padding-bottom:110px}
+  .footer{padding-bottom:120px}
+  .footer-links-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .brand-subtitle{max-width:210px}
   .floating{position:fixed;right:16px;bottom:calc(68px + max(8px,env(safe-area-inset-bottom,0px)));z-index:190;gap:8px}
   .floating .float-btn.whatsapp, .floating .float-btn.call{display:none} /* Mobile bottom bar provides direct Call/WA */
   .floating .float-btn.totop{display:grid}
-  .mobile-bottom{display:grid;grid-template-columns:1fr 1.2fr 1fr;position:fixed;z-index:180;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(0,0,0,.08);padding:8px 12px max(8px,env(safe-area-inset-bottom));gap:10px}
-  .mobile-bottom a{display:flex;align-items:center;justify-content:center;gap:6px;border-radius:10px;padding:10px;font-weight:800;font-size:.85rem;text-align:center}
+  .mobile-bottom{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;z-index:180;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 20px rgba(0,0,0,.08);padding:7px 6px max(7px,env(safe-area-inset-bottom));gap:4px}
+  .mobile-bottom a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:10px;padding:7px 2px;font-weight:800;font-size:.68rem;line-height:1.1;text-align:center;min-width:0}
+  .mobile-bottom a span{font-size:1rem;line-height:1}
   .mobile-bottom .m-call{background:#f1f5f9;color:var(--navy);border:1px solid var(--line)}
   .mobile-bottom .m-wa{background:#16a34a;color:#fff}
-  .mobile-bottom .m-quote{background:var(--orange);color:#fff}
+  .mobile-bottom .m-quote{background:var(--orange);color:#fff;transform:translateY(-7px);box-shadow:0 6px 16px rgba(234,88,12,.3);min-height:54px}
   .cta{padding:28px 18px}
+}
+
+@media(max-width:420px){
+  .hero h1{font-size:2.25rem}
+  .hero-benefits{display:grid;gap:9px}
+  .footer-links-grid{grid-template-columns:1fr}
 }
 
 /* Dark Mode Mobile Adjustments */

@@ -233,7 +233,7 @@
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         '@id': `${window.location.origin}/#organization`,
-        'name': 'MRM Roofing Sheets & Mabati Dealer Kenya',
+        'name': 'MRM Roofing Dealer Kenya',
         'url': window.location.origin,
         'telephone': '+254750527506',
         'priceRange': 'KSh 600 - KSh 2,500 per metre',

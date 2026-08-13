@@ -118,6 +118,15 @@ button,input,select,textarea{font:inherit}
 .hero h1{font-size:clamp(2.4rem,5.5vw,4.5rem);line-height:1.06;letter-spacing:-.04em;margin:16px 0;font-weight:800}
 .hero p{font-size:1.1rem;max-width:620px;color:#e2e8f0;line-height:1.55}
 .hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0}
+.premium-hero{min-height:650px;background-position:center;background-size:cover}
+.premium-hero .hero-content{max-width:780px}
+.hero-profiles{font-size:clamp(1.05rem,2vw,1.3rem)!important;font-weight:750;letter-spacing:.01em}
+.hero-profiles b{color:var(--orange);padding:0 .3em}
+.hero-benefits{display:flex;flex-wrap:wrap;gap:12px 26px;padding:0;margin:24px 0;list-style:none;font-weight:700;color:#fff}
+.hero-benefits li::before{content:"✓";color:#fb923c;font-weight:900;margin-right:8px}
+.btn-hero-secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn-hero-secondary:hover{background:#fff;color:var(--navy)}
+.dealer-note{font-size:.84rem!important;color:#cbd5e1!important;margin-top:8px}
 
 /* Trust Strip */
 .trust-strip{background:#f1f5f9;border-y:1px solid var(--line);padding:18px 0}
@@ -213,6 +222,16 @@ button,input,select,textarea{font:inherit}
 .footer a.brand{min-height:48px;padding:0;margin:0 0 12px;background:transparent;width:auto;display:inline-flex}
 .footer a.brand:hover{background:transparent}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:.82rem;color:#94a3b8}
+.brand-text{display:flex;flex-direction:column}
+.brand-subtitle{display:block;margin-top:3px;font-size:.68rem;line-height:1.2;font-weight:500;color:#64748b;letter-spacing:0}
+.footer .brand-subtitle{color:#cbd5e1}
+.footer-intro{padding-bottom:28px;margin-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-intro p{margin:12px 0 0;color:#cbd5e1}
+.footer-intro p a{display:inline;color:#fff;width:auto;min-height:0;padding:0;margin:0;font-weight:700}
+.footer-links-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.commercial-guides{border-top:1px solid var(--line)}
+.location-intent-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.location-intent-links a{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--royal);font-weight:700}
 .footer .btn{min-height:48px;padding:12px 20px;font-size:0.95rem;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
 
 /* Floating & Mobile Bottom */

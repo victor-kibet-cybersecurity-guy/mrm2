@@ -1,4 +1,4 @@
-# MABATI ROLLING MILLS LTD - Mabati Dealer Frontend
+# MRM Roofing Dealer Kenya - Mabati Dealer Frontend
 
 Static HTML/CSS/JavaScript site. Open `index.html` directly or publish the folder to GitHub Pages.
 

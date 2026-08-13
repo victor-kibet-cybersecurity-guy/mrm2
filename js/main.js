@@ -439,6 +439,18 @@ function normalizeSiteChrome() {
   const root = nested ? '../' : '';
   const headerNav = document.querySelector('.site-header .nav');
 
+  document.querySelectorAll('.brand-text > span:first-child').forEach(name => {
+    name.textContent = 'MRM Roofing Dealer Kenya';
+  });
+  document.querySelectorAll('.brand-text').forEach(brand => {
+    if (!brand.querySelector('.brand-subtitle')) {
+      const subtitle = document.createElement('small');
+      subtitle.className = 'brand-subtitle';
+      subtitle.textContent = 'Supplying MRM roofing products in Kenya.';
+      brand.appendChild(subtitle);
+    }
+  });
+
   let navActions = headerNav?.querySelector('.nav-actions');
   if (headerNav && !navActions) {
     navActions = document.createElement('div');
@@ -460,16 +472,53 @@ function normalizeSiteChrome() {
     </div>`);
   }
 
-  if (!document.querySelector('.mobile-bottom')) {
-    document.body.insertAdjacentHTML('beforeend', `<nav class="mobile-bottom" aria-label="Mobile navigation">
-      <a href="${root}index.html"><span>⌂</span>Home</a>
-      <a href="${root}products.html"><span>▦</span>Products</a>
-      <a href="${root}contact.html#quote-cart"><span>☷</span>Quote</a>
-      <a href="https://wa.me/${INTL}"><span>◉</span>WhatsApp</a>
-      <a href="tel:+${INTL}"><span>☎</span>Call</a>
-      <a href="${root}gallery.html"><span>▣</span>Gallery</a>
-    </nav>`);
+  let mobileNav = document.querySelector('.mobile-bottom');
+  if (!mobileNav) {
+    mobileNav = document.createElement('nav');
+    mobileNav.className = 'mobile-bottom';
+    mobileNav.setAttribute('aria-label', 'Mobile navigation');
+    document.body.appendChild(mobileNav);
   }
+  mobileNav.innerHTML = `
+    <a href="${root}index.html"><span aria-hidden="true">⌂</span>Home</a>
+    <a href="${root}products.html"><span aria-hidden="true">▦</span>Products</a>
+    <a class="m-quote" href="${root}contact.html#smart-quote"><span aria-hidden="true">＋</span>Quote</a>
+    <a class="m-wa" href="https://wa.me/${INTL}" target="_blank" rel="noopener"><span aria-hidden="true">●</span>WhatsApp</a>
+    <a class="m-call" href="tel:+${INTL}"><span aria-hidden="true">☎</span>Call</a>`;
+
+  const footer = document.querySelector('.footer');
+  if (footer) {
+    footer.innerHTML = `<div class="container">
+      <div class="footer-intro">
+        <a class="brand" href="${root}index.html" aria-label="MRM Roofing Dealer Kenya home"><span class="brand-mark">MRM</span><span class="brand-text"><span>MRM Roofing Dealer Kenya</span><small class="brand-subtitle">Supplying MRM roofing products in Kenya.</small></span></a>
+        <p><strong>Phone:</strong> <a href="tel:+${INTL}">${PHONE}</a> &nbsp; <strong>WhatsApp:</strong> <a href="https://wa.me/${INTL}">${PHONE}</a> &nbsp; <strong>Hours:</strong> Mon–Sat, 8:00–17:30</p>
+      </div>
+      <div class="footer-grid footer-links-grid">
+        <div><h3>Products</h3><a href="${root}products.html">Roofing Sheets</a><a href="${root}products.html?q=Versatile">Versatile</a><a href="${root}products.html?q=Orientile">Orientile</a><a href="${root}products.html?q=Covermax">Covermax</a><a href="${root}products.html?q=Resincot">Resincot</a></div>
+        <div><h3>Customer Support</h3><a href="${root}contact.html#smart-quote">Get Roofing Quote</a><a href="${root}faq.html">Frequently Asked Questions</a><a href="${root}delivery.html">Delivery Information</a><a href="${root}index.html#roof-calculator">Roofing Calculator</a></div>
+        <div><h3>Locations</h3><a href="${root}locations/nairobi.html">Nairobi</a><a href="${root}locations/mombasa.html">Mombasa</a><a href="${root}locations/nakuru.html">Nakuru</a><a href="${root}locations/eldoret.html">Eldoret</a><a href="${root}locations/kisumu.html">Kisumu</a></div>
+        <div><h3>Company</h3><a href="${root}about.html">About This Dealer</a><a href="${root}about.html#privacy-policy">Privacy Policy</a><a href="${root}about.html#terms">Terms</a><a href="${root}delivery.html#policy">Delivery Policy</a><a href="${root}contact.html#terms">Quotation Terms</a></div>
+      </div>
+      <div class="footer-bottom"><p>Independent dealer/reseller supplying MRM roofing products in Kenya. This is not the official corporate website of Mabati Rolling Mills.</p><p>© <span data-year></span> MRM Roofing Dealer Kenya.</p></div>
+    </div>`;
+  }
+
+  if (/\/about\.html$/i.test(location.pathname) && !document.querySelector('#privacy-policy')) {
+    document.querySelector('main')?.insertAdjacentHTML('beforeend', `<section class="section alt" id="privacy-policy"><div class="container grid grid-2"><article class="card card-pad"><h2>Privacy Policy</h2><p>Information submitted through quotation forms is used to respond to roofing enquiries, prepare quotations and coordinate requested delivery support. Do not submit payment-card details through website forms.</p></article><article class="card card-pad" id="terms"><h2>Website Terms</h2><p>Displayed prices are reference prices and may change with gauge, finish, length, stock and delivery location. A quotation becomes valid only after direct confirmation. Product trademarks belong to their respective owners.</p></article></div></section>`);
+  }
+
+  document.querySelectorAll('.chip').forEach(chip => {
+    if (/verified purchase/i.test(chip.textContent)) chip.remove();
+  });
+  document.querySelectorAll('.section-head').forEach(head => {
+    if (/verified customer reviews|280\+ reviews|4\.9\s*\/\s*5/i.test(head.textContent)) {
+      const tag = head.querySelector('.tag');
+      if (tag) tag.textContent = 'Customer Feedback';
+      Array.from(head.children).slice(1).forEach(child => child.remove());
+      const description = head.querySelector('p');
+      if (description) description.textContent = 'Feedback shared by customers about roofing enquiries, product selection and delivery support.';
+    }
+  });
 
   const currentPath = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/, '/');
   document.querySelectorAll('.nav-links a, .mobile-bottom a').forEach(link => {
@@ -486,6 +535,15 @@ function normalizeSiteChrome() {
   });
 }
 
+function optimizePageImages() {
+  document.querySelectorAll('img').forEach((img, index) => {
+    img.decoding = 'async';
+    if (index > 1 && !img.closest('.hero')) img.loading = 'lazy';
+    if (!img.hasAttribute('width') && img.naturalWidth) img.width = img.naturalWidth;
+    if (!img.hasAttribute('height') && img.naturalHeight) img.height = img.naturalHeight;
+  });
+}
+
 function setupUI() {
   normalizeSiteChrome();
   setupThemeToggleUI();
@@ -495,6 +553,7 @@ function setupUI() {
   setupBackToTop();
   setupMobileNavAndAccordions();
   setupFAQAccordion();
+  optimizePageImages();
 
   // Reveal Animations
   const io = new IntersectionObserver(es => es.forEach(e => {
@@ -504,20 +563,6 @@ function setupUI() {
 
   // Dynamic Year
   document.querySelectorAll('[data-year]').forEach(e => e.textContent = new Date().getFullYear());
-
-  // Newsletter Subscription Toast
-  const newsBtn = document.querySelector('#newsletter-subscribe');
-  if (newsBtn) {
-    newsBtn.addEventListener('click', () => {
-      const input = document.querySelector('#newsletter');
-      if (input && input.value) {
-        alert(`✓ Thank you! ${input.value} has been subscribed to MRM Mabati price updates.`);
-        input.value = '';
-      } else {
-        alert('Please enter a valid email address.');
-      }
-    });
-  }
 
   bindActions();
 }
