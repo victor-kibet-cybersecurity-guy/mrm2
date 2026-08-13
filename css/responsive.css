@@ -10,6 +10,7 @@
     /* Keep the backdrop behind the sticky header's stacking context so the
        slide-out drawer and close button remain crisp and clickable. */
     z-index: 95;
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
   }
   .nav-backdrop.show {
@@ -173,6 +174,7 @@
     font-weight: 800;
     color: var(--royal);
     cursor: pointer;
+    -webkit-user-select: none;
     user-select: none;
     box-sizing: border-box;
     border-radius: 8px;
