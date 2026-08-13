@@ -255,6 +255,8 @@
   to { opacity: 1; transform: translateY(0); }
 }
 @media(max-width:720px){
+  /* Mobile fallback: useful content must remain visible if reveal observation is delayed. */
+  .reveal{opacity:1;transform:none}
   .container{width:min(100% - 24px,var(--max))}
   .topbar .container{font-size:.78rem;flex-direction:column;gap:4px;text-align:center}
   .nav{min-height:64px}

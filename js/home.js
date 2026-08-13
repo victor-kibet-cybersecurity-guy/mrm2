@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cats = [...new Set(PRODUCTS.map(p => p.category))].slice(0, 8);
     const icons = ['⌂', '▱', '▤', '◫', '◇', '▥', '↧', '◩'];
     catEl.innerHTML = cats.map((c, i) => `
-      <a class="category-card reveal" href="products.html">
+      <a class="category-card reveal visible" href="products.html?category=${encodeURIComponent(c)}">
         <div class="icon-box">${icons[i % icons.length]}</div>
         <strong>${esc(c)}</strong>
         <p class="small">Explore profiles, gauges, finishes and request current pricing.</p>
@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (accEl) {
     accEl.innerHTML = PRODUCTS.filter(p => ['Ridges', 'Valleys', 'Flashing', 'Gutters', 'Downpipes', 'Roof Nails', 'Roof Sealants', 'Roof Insulation'].includes(p.category)).slice(0, 4).map(productCard).join('');
   }
+
+  // These cards are created after main.js registers its reveal observer.
+  // Reveal them explicitly so mobile browsers never leave the sections blank.
+  document.querySelectorAll('#featured-products .reveal, #category-grid .reveal, #home-accessories .reveal')
+    .forEach(card => card.classList.add('visible'));
 
   // Populate Calculator Product Select
   const calcSelect = document.querySelector('#calc-product');
