@@ -82,6 +82,19 @@
   .menu-toggle:hover {
     background: #f1f5f9;
   }
+  body.nav-open .site-header {
+    z-index: 300;
+  }
+  .menu-toggle.active {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    right: 16px;
+    z-index: 400;
+    background: #fff;
+    color: var(--navy);
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  }
 
   body.nav-open {
     overflow: hidden !important;

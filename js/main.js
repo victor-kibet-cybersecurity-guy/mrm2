@@ -168,8 +168,11 @@ function setupMobileNavAndAccordions() {
   function closeNav() {
     navLinks.classList.remove('open');
     menuToggle.classList.remove('active');
+    menuToggle.textContent = '\u2630';
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
     menuToggle.innerHTML = '☰';
     menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '\u2630';
     backdrop.classList.remove('show');
     document.body.classList.remove('nav-open');
   }
@@ -177,8 +180,11 @@ function setupMobileNavAndAccordions() {
   function openNav() {
     navLinks.classList.add('open');
     menuToggle.classList.add('active');
+    menuToggle.textContent = '\u2715';
+    menuToggle.setAttribute('aria-label', 'Close navigation menu');
     menuToggle.innerHTML = '✕';
     menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.textContent = '\u2715';
     backdrop.classList.add('show');
     document.body.classList.add('nav-open');
   }
