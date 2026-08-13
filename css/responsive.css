@@ -260,6 +260,7 @@
   .nav{min-height:64px}
   .brand{font-size:.9rem}
   .hero{min-height:560px;background-position:62% center}
+  .premium-hero{background-image:linear-gradient(90deg,rgba(5,24,43,.94) 0%,rgba(5,35,58,.78) 55%,rgba(5,35,58,.3) 100%),url('../images/project-01-mobile.webp')!important}
   .hero-content{padding:48px 0}
   .hero-buttons{flex-direction:column}
   .hero-buttons .btn{width:100%}

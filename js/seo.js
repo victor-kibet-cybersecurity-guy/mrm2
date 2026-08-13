@@ -187,7 +187,7 @@
 
       const pageDesc = `${product.name} Mabati price${locationSuffix}. ${priceStr}${gaugeStr}${finishStr}${widthStr}${colorsStr}Direct factory supply & delivery to ${countyName || 'Nairobi, Kiambu, Nakuru, Eldoret, Mombasa & all 47 counties'}.`;
 
-      const rawImg = product.image || (product.id ? `images/${product.id}.svg` : 'images/hero-roof.svg');
+      const rawImg = product.image || 'images/project-01.webp';
       const absoluteImg = toAbsoluteUrl(rawImg);
       const productPageRelUrl = `product-details.html?id=${encodeURIComponent(product.id)}`;
       const absoluteProductUrl = toAbsoluteUrl(productPageRelUrl);

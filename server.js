@@ -10,7 +10,16 @@ const PORT = process.env.PORT || 3000;
 
 // Serve static assets with automatic .html extension resolution
 app.use(express.static(__dirname, {
-  extensions: ['html', 'htm']
+  extensions: ['html', 'htm'],
+  etag: true,
+  lastModified: true,
+  setHeaders(res, filePath) {
+    if (/\.(?:css|js|webp|png|jpe?g|svg|ico|avif)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
+    } else if (/\.html?$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
+    }
+  }
 }));
 
 // Fallback to 404 page for unmatched routes

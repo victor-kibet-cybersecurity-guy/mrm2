@@ -212,7 +212,7 @@
       keywords: keywords.join(', '),
       canonicalUrl: currentUrl,
       ogType: ctx.product ? 'product' : 'website',
-      image: ctx.product && ctx.product.image ? toAbsoluteUrl(ctx.product.image) : toAbsoluteUrl('images/hero-roof.svg')
+      image: ctx.product && ctx.product.image ? toAbsoluteUrl(ctx.product.image) : toAbsoluteUrl('images/project-01.webp')
     };
   }
 

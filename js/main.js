@@ -522,6 +522,11 @@ function optimizePageImages() {
   document.querySelectorAll('img').forEach((img, index) => {
     img.decoding = 'async';
     if (index > 1 && !img.closest('.hero')) img.loading = 'lazy';
+    const match = img.getAttribute('src')?.match(/^(.*\/)?project-(\d{2})\.webp$/);
+    if (match && !img.hasAttribute('srcset')) {
+      img.srcset = `${match[1] || ''}project-${match[2]}-mobile.webp 640w, ${img.getAttribute('src')} 1200w`;
+      img.sizes = '(max-width: 720px) 92vw, (max-width: 1100px) 46vw, 380px';
+    }
     if (!img.hasAttribute('width') && img.naturalWidth) img.width = img.naturalWidth;
     if (!img.hasAttribute('height') && img.naturalHeight) img.height = img.naturalHeight;
   });
