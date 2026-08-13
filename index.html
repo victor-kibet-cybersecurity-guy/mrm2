@@ -112,7 +112,7 @@
 
   <main>
     <!-- Homepage Hero Section -->
-    <section class="hero premium-hero" style="background-image: linear-gradient(90deg, rgba(5, 24, 43, 0.94) 0%, rgba(5, 35, 58, 0.78) 48%, rgba(5, 35, 58, 0.22) 100%), url('images/project-01.webp');">
+    <section class="hero premium-hero u-0508018e1">
       <div class="container hero-content">
         <span class="eyebrow">MRM Roofing Dealer Kenya</span>
         <h1>MRM Roofing Sheets in Kenya</h1>
@@ -198,10 +198,10 @@
 
         <div class="calc-layout">
           <!-- Visualizer Controls -->
-          <div class="card card-pad" style="background:#fff;">
-            <h3 style="margin-top:0; color:var(--navy);">Roof Design Controls</h3>
+          <div class="card card-pad u-2a7713144">
+            <h3 class="u-ad789365c">Roof Design Controls</h3>
 
-            <div class="form-grid" style="grid-template-columns:1fr;">
+            <div class="form-grid u-6384e3671">
               <div class="field">
                 <label for="vis-style">House Style</label>
                 <select id="vis-style">
@@ -224,7 +224,7 @@
 
               <div class="field">
                 <label>Roof Colour Selection</label>
-                <div class="swatches" id="swatches" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;"></div>
+                <div class="swatches u-24d94733d" id="swatches"></div>
               </div>
 
               <div class="field">
@@ -236,14 +236,14 @@
               </div>
             </div>
 
-            <div style="margin-top:20px;">
-              <a class="btn btn-orange" id="vis-quote-btn" style="width:100%; text-align:center;" target="_blank" rel="noopener">Get Quote for This Roof</a>
+            <div class="u-a26bda7d1">
+              <a class="btn btn-orange u-1d0bb2264" id="vis-quote-btn" target="_blank" rel="noopener">Get Quote for This Roof</a>
             </div>
           </div>
 
           <!-- Dynamic SVG Graphic Render Box -->
-          <div class="card card-pad" style="background:#f1f5f9; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-            <svg id="visualizer-house-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="320" style="max-width:520px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.06); background:#ffffff;">
+          <div class="card card-pad u-70532dd60">
+            <svg id="visualizer-house-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="320" class="u-51c950cf4">
               <!-- Sky -->
               <rect width="600" height="400" fill="#f8fafc"/>
               <!-- Wall -->
@@ -258,7 +258,7 @@
               <!-- Dynamic Ridge Accent -->
               <path id="svg-ridge-path" d="M50 185 L300 32 L550 185" stroke="#f59e0b" stroke-width="8" stroke-linecap="round" fill="none"/>
             </svg>
-            <span class="small" style="margin-top:10px; color:var(--muted);">Dynamic architectural roof visualization</span>
+            <span class="small u-77aa59294">Dynamic architectural roof visualization</span>
           </div>
         </div>
       </div>
@@ -277,7 +277,7 @@
 
         <div class="calc-layout">
           <form class="card card-pad" id="roof-calculator-form">
-            <h3 style="margin-top:0; color:var(--navy);">Enter Dimensions</h3>
+            <h3 class="u-ad789365c">Enter Dimensions</h3>
             <div class="form-grid">
               <div class="field">
                 <label for="calc-length">Roof Length (m)</label>
@@ -307,21 +307,21 @@
                   <option value="Mono-pitch">Mono-pitch Roof</option>
                 </select>
               </div>
-              <div class="field" style="grid-column:1 / -1;">
+              <div class="field u-4ddcfbe56">
                 <label for="calc-product">Select MRM Roofing Product</label>
                 <select id="calc-product" name="product"></select>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-top:20px; width:100%;">Calculate Material Estimate</button>
+            <button type="submit" class="btn btn-primary u-24116970c">Calculate Material Estimate</button>
           </form>
 
           <!-- Result Target -->
           <div id="roof-result">
-            <div class="card card-pad" style="background:#fff; height:100%; display:flex; align-items:center; justify-content:center; text-align:center;">
+            <div class="card card-pad u-14e802561">
               <div>
-                <span style="font-size:2.5rem; display:block; margin-bottom:10px;">📊</span>
-                <h3 style="margin:0 0 6px; color:var(--navy);">Ready for Calculation</h3>
-                <p class="small" style="margin:0;">Fill in roof dimensions and click calculate to view required sheets, accessories and estimated material cost.</p>
+                <span class="u-829909ce0">📊</span>
+                <h3 class="u-dd4c489b7">Ready for Calculation</h3>
+                <p class="small u-116966189">Fill in roof dimensions and click calculate to view required sheets, accessories and estimated material cost.</p>
               </div>
             </div>
           </div>
@@ -356,11 +356,11 @@
           <a class="btn btn-outline" href="delivery.html">Delivery Information</a>
         </div>
 
-        <div class="card card-pad" style="background:#fff; margin-bottom:24px;">
-          <div class="form-grid" style="grid-template-columns:1fr 2fr; align-items:center;">
+        <div class="card card-pad u-8cc15746a">
+          <div class="form-grid u-b6ac65fe0">
             <div>
-              <label for="county-lookup-select" style="font-weight:700; color:var(--navy); font-size:1rem;">Select Your County:</label>
-              <select id="county-lookup-select" style="margin-top:6px;">
+              <label for="county-lookup-select" class="u-e5ad964f0">Select Your County:</label>
+              <select id="county-lookup-select" class="u-fe7b4979f">
                 <option value="Nairobi">Nairobi County</option>
                 <option value="Kiambu">Kiambu County</option>
                 <option value="Nakuru">Nakuru County</option>
@@ -396,18 +396,18 @@
         </div>
         <div class="grid grid-3">
           <div class="card card-pad">
-            <img src="images/project-01.webp" srcset="images/project-01-mobile.webp 640w, images/project-01.webp 1200w" alt="Nakuru residential roof" loading="lazy" style="border-radius:8px; width:100%; height:200px; object-fit:cover;">
-            <strong style="display:block; margin-top:10px;">Residential Villa in Nakuru</strong>
+            <img src="images/project-01.webp" srcset="images/project-01-mobile.webp 640w, images/project-01.webp 1200w" alt="Nakuru residential roof" loading="lazy" class="u-4811199dc">
+            <strong class="u-7f153e1cd">Residential Villa in Nakuru</strong>
             <span class="small">Profile: Versatile Tile (Charcoal)</span>
           </div>
           <div class="card card-pad">
-            <img src="images/project-02.webp" srcset="images/project-02-mobile.webp 640w, images/project-02.webp 1200w" alt="Kiambu maisonette roof" loading="lazy" style="border-radius:8px; width:100%; height:200px; object-fit:cover;">
-            <strong style="display:block; margin-top:10px;">Executive Maisonette in Kiambu</strong>
+            <img src="images/project-02.webp" srcset="images/project-02-mobile.webp 640w, images/project-02.webp 1200w" alt="Kiambu maisonette roof" loading="lazy" class="u-4811199dc">
+            <strong class="u-7f153e1cd">Executive Maisonette in Kiambu</strong>
             <span class="small">Profile: Orientile Tile (Maroon)</span>
           </div>
           <div class="card card-pad">
-            <img src="images/project-03.webp" srcset="images/project-03-mobile.webp 640w, images/project-03.webp 1200w" alt="Commercial complex roof" loading="lazy" style="border-radius:8px; width:100%; height:200px; object-fit:cover;">
-            <strong style="display:block; margin-top:10px;">Commercial Complex in Eldoret</strong>
+            <img src="images/project-03.webp" srcset="images/project-03-mobile.webp 640w, images/project-03.webp 1200w" alt="Commercial complex roof" loading="lazy" class="u-4811199dc">
+            <strong class="u-7f153e1cd">Commercial Complex in Eldoret</strong>
             <span class="small">Profile: Covermax Box Profile</span>
           </div>
         </div>
@@ -427,116 +427,116 @@
         </div>
 
         <div class="grid grid-3">
-          <div class="card card-pad" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="card card-pad u-f4966a454">
             <div>
-              <div style="display:flex; justify-style:space-between; align-items:center; margin-bottom:12px;">
-                <span style="color:#f59e0b; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+              <div class="u-3865ac414">
+                <span class="u-3ad88d9d0">★★★★★</span>
 
               </div>
-              <p style="font-size:0.95rem; line-height:1.6; color:#334155; margin-bottom:16px;">
+              <p class="u-ab0f38355">
                 "Ordered 120 sheets of MRM Versatile Tile 28G Charcoal for my house build in Ruiru. The order arrived in 2 days directly to the site in good condition. The dark finish looks stunning!"
               </p>
             </div>
-            <div style="border-top:1px solid var(--line); padding-top:14px; margin-top:auto;">
-              <strong style="display:block; color:var(--navy); font-size:0.98rem;">Eng. Joseph Mwangi</strong>
-              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; color:var(--muted); margin-top:4px;">
+            <div class="u-73acba8c6">
+              <strong class="u-83aa7c86e">Eng. Joseph Mwangi</strong>
+              <div class="u-80df0a05b">
                 <span>📍 Kiambu County</span>
-                <span style="color:var(--royal); font-weight:600;">Product: Versatile Tile 28G</span>
+                <span class="u-6d1146428">Product: Versatile Tile 28G</span>
               </div>
             </div>
           </div>
 
-          <div class="card card-pad" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="card card-pad u-f4966a454">
             <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                <span style="color:#f59e0b; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+              <div class="u-2865149ff">
+                <span class="u-3ad88d9d0">★★★★★</span>
 
               </div>
-              <p style="font-size:0.95rem; line-height:1.6; color:#334155; margin-bottom:16px;">
+              <p class="u-ab0f38355">
                 "Excellent customer service and transparent quotation. They calculated the exact roof area and ridges needed so we had zero material wastage on our project in Nyali."
               </p>
             </div>
-            <div style="border-top:1px solid var(--line); padding-top:14px; margin-top:auto;">
-              <strong style="display:block; color:var(--navy); font-size:0.98rem;">Hassan Abdi</strong>
-              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; color:var(--muted); margin-top:4px;">
+            <div class="u-73acba8c6">
+              <strong class="u-83aa7c86e">Hassan Abdi</strong>
+              <div class="u-80df0a05b">
                 <span>📍 Mombasa County</span>
-                <span style="color:var(--royal); font-weight:600;">Product: Covermax Box Profile</span>
+                <span class="u-6d1146428">Product: Covermax Box Profile</span>
               </div>
             </div>
           </div>
 
-          <div class="card card-pad" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="card card-pad u-f4966a454">
             <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                <span style="color:#f59e0b; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+              <div class="u-2865149ff">
+                <span class="u-3ad88d9d0">★★★★★</span>
 
               </div>
-              <p style="font-size:0.95rem; line-height:1.6; color:#334155; margin-bottom:16px;">
+              <p class="u-ab0f38355">
                 "Fast delivery to Eldoret town. Orientile Maroon 28G sheets were genuine gauge and accurately cut to our requested 3.0 metre lengths."
               </p>
             </div>
-            <div style="border-top:1px solid var(--line); padding-top:14px; margin-top:auto;">
-              <strong style="display:block; color:var(--navy); font-size:0.98rem;">Mercy Chebet</strong>
-              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; color:var(--muted); margin-top:4px;">
+            <div class="u-73acba8c6">
+              <strong class="u-83aa7c86e">Mercy Chebet</strong>
+              <div class="u-80df0a05b">
                 <span>📍 Uasin Gishu County</span>
-                <span style="color:var(--royal); font-weight:600;">Product: Orientile Tile 28G</span>
+                <span class="u-6d1146428">Product: Orientile Tile 28G</span>
               </div>
             </div>
           </div>
 
-          <div class="card card-pad" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="card card-pad u-f4966a454">
             <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                <span style="color:#f59e0b; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+              <div class="u-2865149ff">
+                <span class="u-3ad88d9d0">★★★★★</span>
 
               </div>
-              <p style="font-size:0.95rem; line-height:1.6; color:#334155; margin-bottom:16px;">
+              <p class="u-ab0f38355">
                 "Bought Resincot corrugated sheets and matching ridges for a commercial warehouse in Industrial Area. Quick dispatch and friendly sales team!"
               </p>
             </div>
-            <div style="border-top:1px solid var(--line); padding-top:14px; margin-top:auto;">
-              <strong style="display:block; color:var(--navy); font-size:0.98rem;">David Ochieng</strong>
-              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; color:var(--muted); margin-top:4px;">
+            <div class="u-73acba8c6">
+              <strong class="u-83aa7c86e">David Ochieng</strong>
+              <div class="u-80df0a05b">
                 <span>📍 Nairobi County</span>
-                <span style="color:var(--royal); font-weight:600;">Product: Resincot Corrugated</span>
+                <span class="u-6d1146428">Product: Resincot Corrugated</span>
               </div>
             </div>
           </div>
 
-          <div class="card card-pad" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="card card-pad u-f4966a454">
             <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                <span style="color:#f59e0b; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+              <div class="u-2865149ff">
+                <span class="u-3ad88d9d0">★★★★★</span>
 
               </div>
-              <p style="font-size:0.95rem; line-height:1.6; color:#334155; margin-bottom:16px;">
+              <p class="u-ab0f38355">
                 "The roofing calculator tool gave us a very realistic price estimate. When we called on WhatsApp, the sales rep confirmed the exact order in 10 minutes."
               </p>
             </div>
-            <div style="border-top:1px solid var(--line); padding-top:14px; margin-top:auto;">
-              <strong style="display:block; color:var(--navy); font-size:0.98rem;">Peter Kamau</strong>
-              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; color:var(--muted); margin-top:4px;">
+            <div class="u-73acba8c6">
+              <strong class="u-83aa7c86e">Peter Kamau</strong>
+              <div class="u-80df0a05b">
                 <span>📍 Nakuru County</span>
-                <span style="color:var(--royal); font-weight:600;">Product: Elegantile 28G</span>
+                <span class="u-6d1146428">Product: Elegantile 28G</span>
               </div>
             </div>
           </div>
 
-          <div class="card card-pad" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="card card-pad u-f4966a454">
             <div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-                <span style="color:#f59e0b; font-size:1.1rem; letter-spacing:2px;">★★★★★</span>
+              <div class="u-2865149ff">
+                <span class="u-3ad88d9d0">★★★★★</span>
 
               </div>
-              <p style="font-size:0.95rem; line-height:1.6; color:#334155; margin-bottom:16px;">
+              <p class="u-ab0f38355">
                 "Very smooth transaction. They supplied both the roofing sheets and eaves gutters in matching dark green finish for my bungalow in Kisumu."
               </p>
             </div>
-            <div style="border-top:1px solid var(--line); padding-top:14px; margin-top:auto;">
-              <strong style="display:block; color:var(--navy); font-size:0.98rem;">Mary Wambui</strong>
-              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem; color:var(--muted); margin-top:4px;">
+            <div class="u-73acba8c6">
+              <strong class="u-83aa7c86e">Mary Wambui</strong>
+              <div class="u-80df0a05b">
                 <span>📍 Kisumu County</span>
-                <span style="color:var(--royal); font-weight:600;">Product: Versatile Tile &amp; Gutters</span>
+                <span class="u-6d1146428">Product: Versatile Tile &amp; Gutters</span>
               </div>
             </div>
           </div>
@@ -651,7 +651,7 @@
           <p>Send your product, gauge, colour, sheet length, quantity and delivery location to 0750527506.</p>
           <div class="hero-buttons">
             <a class="btn btn-orange" href="https://wa.me/254750527506" target="_blank" rel="noopener">Request Quote on WhatsApp</a>
-            <a class="btn btn-outline" href="tel:+254750527506" style="background:#fff; color:var(--navy);">Call 0750527506</a>
+            <a class="btn btn-outline u-67cd5afc4" href="tel:+254750527506">Call 0750527506</a>
           </div>
         </div>
       </div>
