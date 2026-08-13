@@ -655,3 +655,43 @@ window.PRODUCTS = [
     "description": "Double Foil Roof Insulation 10m for residential and commercial roofing projects in Kenya. Request a confirmed quotation, colour availability and cut-to-length options before ordering."
   }
 ];
+
+// Current roofing-sheet price list supplied by the dealer (KSh per metre).
+// Accessory products above are retained; roofing sheets are replaced with the
+// standard glossy and matte options below so every displayed price is consistent.
+const roofingPriceList = [
+  ['box-profile-30g-glossy', 'Box Profile Iron Sheet 30G', 'Box Profile', 400, '30G', '0.25 mm', 'Glossy', 'Box Profile'],
+  ['ordinary-30g-glossy', 'Ordinary Iron Sheet 30G', 'Ordinary Iron Sheets', 300, '30G', '0.25 mm', 'Glossy', 'Ordinary'],
+  ['corrugated-30g-glossy', 'Corrugated Iron Sheet 30G', 'Corrugated Sheets', 340, '30G', '0.25 mm', 'Glossy', 'Corrugated'],
+  ['versatile-30g-glossy', 'Versatile Iron Sheet 30G', 'Versatile Roofing', 650, '30G', '0.25 mm', 'Glossy', 'Tile Profile'],
+  ['roman-tiles-30g-glossy', 'Roman Tiles Iron Sheet 30G', 'Roman Tiles Roofing', 560, '30G', '0.25 mm', 'Glossy', 'Roman Tile'],
+  ['box-profile-28g-glossy', 'Box Profile Iron Sheet 28G', 'Box Profile', 440, '28G', '0.32 mm', 'Glossy', 'Box Profile'],
+  ['ordinary-28g-glossy', 'Ordinary Iron Sheet 28G', 'Ordinary Iron Sheets', 340, '28G', '0.32 mm', 'Glossy', 'Ordinary'],
+  ['corrugated-28g-glossy', 'Corrugated Iron Sheet 28G', 'Corrugated Sheets', 400, '28G', '0.32 mm', 'Glossy', 'Corrugated'],
+  ['versatile-28g-glossy', 'Versatile Iron Sheet 28G', 'Versatile Roofing', 700, '28G', '0.32 mm', 'Glossy', 'Tile Profile'],
+  ['roman-tiles-28g-glossy', 'Roman Tiles Iron Sheet 28G', 'Roman Tiles Roofing', 630, '28G', '0.32 mm', 'Glossy', 'Roman Tile'],
+  ['box-profile-28g-matte', 'Box Profile Iron Sheet 28G Matte', 'Box Profile', 530, '28G', '0.32 mm', 'Matte', 'Box Profile'],
+  ['corrugated-28g-matte', 'Corrugated Iron Sheet 28G Matte', 'Corrugated Sheets', 480, '28G', '0.32 mm', 'Matte', 'Corrugated'],
+  ['versatile-28g-matte', 'Versatile Iron Sheet 28G Matte', 'Versatile Roofing', 850, '28G', '0.32 mm', 'Matte', 'Tile Profile'],
+  ['roman-tiles-28g-matte', 'Roman Tiles Iron Sheet 28G Matte', 'Roman Tiles Roofing', 700, '28G', '0.32 mm', 'Matte', 'Roman Tile'],
+  ['box-profile-30g-matte', 'Box Profile Iron Sheet 30G Matte', 'Box Profile', 460, '30G', '0.25 mm', 'Matte', 'Box Profile'],
+  ['corrugated-30g-matte', 'Corrugated Iron Sheet 30G Matte', 'Corrugated Sheets', 390, '30G', '0.25 mm', 'Matte', 'Corrugated'],
+  ['versatile-30g-matte', 'Versatile Iron Sheet 30G Matte', 'Versatile Roofing', 750, '30G', '0.25 mm', 'Matte', 'Tile Profile'],
+  ['roman-tiles-30g-matte', 'Roman Tiles Iron Sheet 30G Matte', 'Roman Tiles Roofing', 630, '30G', '0.25 mm', 'Matte', 'Roman Tile']
+].map(([id, name, category, price, gauge, thickness, finish, profile], index) => ({
+  id, name, category, price, gauge, thickness,
+  colours: ['Charcoal', 'Tile Red', 'Green'],
+  finish, profile,
+  width: profile === 'Corrugated' || profile === 'Ordinary' ? '762 mm' : '1015 mm',
+  featured: index < 5,
+  rating: 4.8,
+  unit: 'metre',
+  brand: 'MRM Roofing Dealer',
+  availability: 'Inquire for stock',
+  description: `${name} with a ${finish.toLowerCase()} finish. Price is KSh ${price} per metre; request colour availability, cut-to-length options and delivery confirmation before ordering.`
+}));
+
+const nonSheetProducts = window.PRODUCTS.filter(product =>
+  product.gauge === 'N/A' || product.profile === 'Accessory' || product.profile === 'Insulation'
+);
+window.PRODUCTS = [...roofingPriceList, ...nonSheetProducts];
