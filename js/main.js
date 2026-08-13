@@ -434,7 +434,60 @@ function setupFAQAccordion() {
   });
 }
 
+function normalizeSiteChrome() {
+  const nested = /\/(counties|locations)\//.test(location.pathname.replace(/\\/g, '/'));
+  const root = nested ? '../' : '';
+  const headerNav = document.querySelector('.site-header .nav');
+
+  let navActions = headerNav?.querySelector('.nav-actions');
+  if (headerNav && !navActions) {
+    navActions = document.createElement('div');
+    navActions.className = 'nav-actions';
+    navActions.innerHTML = `<a class="btn btn-outline" href="https://wa.me/${INTL}" target="_blank" rel="noopener">WhatsApp</a>`;
+    headerNav.appendChild(navActions);
+  }
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  if (menuToggle && !menuToggle.hasAttribute('aria-expanded')) {
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  if (!document.querySelector('.floating')) {
+    document.body.insertAdjacentHTML('beforeend', `<div class="floating">
+      <a class="float-btn whatsapp" href="https://wa.me/${INTL}" aria-label="WhatsApp ${PHONE}" target="_blank" rel="noopener">WA</a>
+      <a class="float-btn call" href="tel:+${INTL}" aria-label="Call ${PHONE}">☎</a>
+      <button class="float-btn totop" type="button" aria-label="Back to top">↑</button>
+    </div>`);
+  }
+
+  if (!document.querySelector('.mobile-bottom')) {
+    document.body.insertAdjacentHTML('beforeend', `<nav class="mobile-bottom" aria-label="Mobile navigation">
+      <a href="${root}index.html"><span>⌂</span>Home</a>
+      <a href="${root}products.html"><span>▦</span>Products</a>
+      <a href="${root}contact.html#quote-cart"><span>☷</span>Quote</a>
+      <a href="https://wa.me/${INTL}"><span>◉</span>WhatsApp</a>
+      <a href="tel:+${INTL}"><span>☎</span>Call</a>
+      <a href="${root}gallery.html"><span>▣</span>Gallery</a>
+    </nav>`);
+  }
+
+  const currentPath = location.pathname.replace(/\\/g, '/').replace(/\/index\.html$/, '/');
+  document.querySelectorAll('.nav-links a, .mobile-bottom a').forEach(link => {
+    if (!link.href || !link.href.startsWith(location.origin) && location.protocol !== 'file:') return;
+    const linkPath = new URL(link.href, location.href).pathname.replace(/\\/g, '/').replace(/\/index\.html$/, '/');
+    const isActive = linkPath === currentPath;
+    link.classList.toggle('active-page', isActive);
+    if (isActive) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+
+  document.querySelectorAll('.footer [data-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+}
+
 function setupUI() {
+  normalizeSiteChrome();
   setupThemeToggleUI();
   setupSocialLinks();
   setupFloatingWhatsAppIcon();

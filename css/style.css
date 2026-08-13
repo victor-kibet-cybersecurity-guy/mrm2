@@ -83,6 +83,9 @@ button,input,select,textarea{font:inherit}
 .nav-links{display:flex;align-items:center;gap:20px;font-weight:650;font-size:.92rem}
 .nav-item{position:relative}
 .nav-item > a{padding:8px 0;display:inline-flex;align-items:center;gap:4px}
+.nav-links a.active-page{color:var(--orange)}
+.nav-links > a.active-page,.nav-item > a.active-page{position:relative}
+.nav-links > a.active-page::after,.nav-item > a.active-page::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:999px;background:var(--orange)}
 .nav-item:hover .mega-menu, .nav-item:hover .dropdown-menu{display:block}
 
 /* Mega Menu & Dropdowns */
@@ -233,6 +236,7 @@ button,input,select,textarea{font:inherit}
 .float-btn.totop:hover{background:var(--royal);box-shadow:0 10px 28px rgba(8,42,77,.35)}
 
 .mobile-bottom{display:none}
+.mobile-bottom a.active-page{color:var(--orange);background:#fff7ed}
 
 /* Compact SEO Hub */
 .compact-seo-hub{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:30px}
