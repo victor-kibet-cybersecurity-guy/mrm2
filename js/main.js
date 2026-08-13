@@ -53,7 +53,9 @@ function productCard(p) {
 
   const quoteMsg = `Hello MRM Roofing Dealer Kenya, I am interested in ${p.name} (${p.gauge}, ${p.finish}). Please send today's confirmed price, available colours and delivery estimate.`;
 
-  return `<article class="card product-card reveal">
+  // Product cards are injected after the page's reveal observer is registered.
+  // Mark them visible immediately so they cannot remain transparent on mobile.
+  return `<article class="card product-card reveal visible">
     <button class="fav" data-wish="${p.id}" aria-label="Add ${esc(p.name)} to wishlist">♡</button>
     <div class="product-card-img-wrap">
       <img loading="lazy" decoding="async" src="${getProductImage(p)}" srcset="${getProductImage(p, true)} 640w, ${getProductImage(p)} 1200w" sizes="(max-width:767px) 100vw, 25vw" onerror="this.onerror=null;this.src='${getProductSvg(p)}'" alt="${esc(p.name)} MRM roofing sheet preview">
