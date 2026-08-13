@@ -482,7 +482,7 @@ function normalizeSiteChrome() {
         <div><h3>Locations</h3><a href="${root}locations/nairobi.html">Nairobi</a><a href="${root}locations/mombasa.html">Mombasa</a><a href="${root}locations/nakuru.html">Nakuru</a><a href="${root}locations/eldoret.html">Eldoret</a><a href="${root}locations/kisumu.html">Kisumu</a></div>
         <div><h3>Company</h3><a href="${root}about.html">About This Dealer</a><a href="${root}about.html#privacy-policy">Privacy Policy</a><a href="${root}about.html#terms">Terms</a><a href="${root}delivery.html#policy">Delivery Policy</a><a href="${root}contact.html#terms">Quotation Terms</a></div>
       </div>
-      <div class="footer-bottom"><p>Independent dealer/reseller supplying MRM roofing products in Kenya. This is not the official corporate website of Mabati Rolling Mills.</p><p>© <span data-year></span> MRM Roofing Dealer Kenya.</p></div>
+      <div class="footer-bottom"><p>© <span data-year></span> MRM Roofing Dealer Kenya.</p></div>
     </div>`;
   }
 
