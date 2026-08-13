@@ -19,12 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Read URL search params
   const urlParams = new URLSearchParams(window.location.search);
+  const query = (urlParams.get('q') || '').trim().toLowerCase();
+  const searchInput = document.querySelector('[data-search]');
+  if (query && searchInput) searchInput.value = urlParams.get('q').trim();
   if (urlParams.get('category')) controls.category.value = urlParams.get('category');
   if (urlParams.get('gauge')) controls.gauge.value = urlParams.get('gauge');
   if (urlParams.get('finish')) controls.finish.value = urlParams.get('finish');
 
   function render() {
     let a = PRODUCTS.filter(p => (
+      (!query || [p.name, p.category, p.gauge, p.thickness, p.finish, p.brand, p.profile, ...(p.colours || [])]
+        .some(value => String(value || '').toLowerCase().includes(query))) &&
       (!controls.category.value || p.category.toLowerCase().includes(controls.category.value.toLowerCase())) &&
       (!controls.gauge.value || p.gauge === controls.gauge.value) &&
       (!controls.thickness.value || p.thickness === controls.thickness.value) &&
