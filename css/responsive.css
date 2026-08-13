@@ -7,7 +7,9 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity .35s ease, visibility .35s ease;
-    z-index: 240;
+    /* Keep the backdrop behind the sticky header's stacking context so the
+       slide-out drawer and close button remain crisp and clickable. */
+    z-index: 95;
     backdrop-filter: blur(4px);
   }
   .nav-backdrop.show {
